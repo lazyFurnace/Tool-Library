@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		body{
+			margin:0;
+			padding:0;
+		}
+		header{
+			height:100px;
+			width:100%;
+			background:#000;
+		}
+		img{
+			vertical-align: bottom;
+			width:100%;
+		};
+	</style>	
+ </head>
+ <body>
+		<header>头部</header>
+		<div class="Carousel">
+			<div class="Carousel_content">
+				<img src="img/Desert.jpg">
+			</div>
+			<div class="Carousel_content">
+				<img src="img/Chrysanthemum.jpg">
+			</div>
+			<div class="Carousel_content">
+				<img src="img/Hydrangeas.jpg">
+			</div>
+			<div class="Carousel_content">
+				<img src="img/Jellyfish.jpg">
+			</div>
+		</div>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="simpleCarousel.js"></script>
+		<script>		
+			$(".Carousel").simpleCarousel();		
+		</script>
+ </body>
+</html>
