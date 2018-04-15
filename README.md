@@ -1,3 +1,3 @@
-# MyQuery
-My jQuery UI 
+# jQuery-Carousel
+ 
 自己做的jQuery轮播图插件
