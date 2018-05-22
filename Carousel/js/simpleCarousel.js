@@ -1,4 +1,4 @@
-$.fn.simpleCarousel=function(isAuto,time){
+$.fn.simpleCarousel=function(isAuto, time){
 	//liqi
 	var liqi={
 		isAuto:isAuto,
