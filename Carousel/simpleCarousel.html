@@ -9,18 +9,27 @@
 			padding:0;
 		}
 		header{
-			height:100px;
+			height:50px;
+			line-height: 50px;
 			width:100%;
 			background:#000;
+			color: #fff;
+			margin-bottom: 50px;
+			text-align: center
 		}
 		img{
 			vertical-align: bottom;
 			width:100%;
-		};
-	</style>	
+		}
+		.Carousel{
+			width: 600px;
+			margin: 0 auto;
+		}
+	</style>
+	<script src="js/jquery-1.11.3.js"></script>
  </head>
  <body>
-		<header>头部</header>
+		<header>轮播图</header>
 		<div class="Carousel">
 			<div>
 				<img src="img/Desert.jpg">
@@ -35,8 +44,7 @@
 				<img src="img/Jellyfish.jpg">
 			</div>
 		</div>
-		<script src="../jQuery/jquery-1.11.3.js"></script>
-		<script src="simpleCarousel.js"></script>
+		<script src="js/simpleCarousel.js"></script>
 		<script>	
 			//调用插件
 			$(".Carousel").simpleCarousel();		
