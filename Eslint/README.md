@@ -10,6 +10,8 @@
 4.  `Typo in static class property declaration  react/no-typos` <br>
     缺少PropTypes静态类检查 (3、4一起出现的，原因是 `propTypes` 写成了 `PropTypes` !!) <br>
 5.  `'pictureStyle' is defined but never used  no-unused-vars` <br>
-    pictureStyle 这个变量从来都没有被使用
+    pictureStyle 这个变量从来都没有被使用 <br>
 6.  `Unexpected trailing comma  comma-dangle` <br>
-    意外的逗号
+    意外的逗号 <br>
+7.  `Prop type 'object' is forbidden  react/forbid-prop-types` <br>
+    PropTypes.object  不准使用 <br>
