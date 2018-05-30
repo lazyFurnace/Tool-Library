@@ -15,3 +15,12 @@
     意外的逗号 <br>
 7.  `Prop type 'object' is forbidden  react/forbid-prop-types` <br>
     PropTypes.object  不准使用 <br>
+8.  `Missing space before =>   arrow-spacing` <br>
+    `Missing space after  =>   arrow-spacing` <br>
+    箭头函数前后少空格 <br>
+9.  `Unexpected block statement surrounding arrow body; move the returned value immediately after the '=>'  arrow-body-style` <br>
+    不用写 {} return 等 箭头体周围的意外块语句；在'= >箭头体样式之后立即移动返回值 <br>
+10. `Trailing spaces not allowed` <br>
+    不允许尾随空间 <br>
+11. `Unexpected parentheses around single function argument having a body with no curly braces  arrow-parens` <br>
+    箭头函数单参数不用括号 <br>
