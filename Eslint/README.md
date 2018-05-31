@@ -24,3 +24,5 @@
     不允许尾随空间 <br>
 11. `Unexpected parentheses around single function argument having a body with no curly braces  arrow-parens` <br>
     箭头函数单参数不用括号 <br>
+12. `Strings must use singlequote   quotes` <br>
+    纯字符串使用 '
