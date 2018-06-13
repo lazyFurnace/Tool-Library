@@ -31,13 +31,16 @@ function Queue() {
         item.push(...arg);
     }
     this.dequeue = function() {
-        return item.unshift()
+        return item.shift()
     }
     this.front = function() {
         return item[0];
     }
     this.isEmpty = function() {
         return item.length === 0;
+    }
+    this.clear = function() {
+        item.length = 0;
     }
     this.size = function() {
         return item.length;
