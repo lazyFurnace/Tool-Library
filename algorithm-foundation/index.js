@@ -49,3 +49,48 @@ function Queue() {
         return item.toString();
     }
 }
+
+
+//优先队列
+function PriorityQueue() {
+    let item = [];
+    function QueueElement(element, priority) {
+        this.element = element;
+        this.priority = priority;
+    }
+    this.isEmpty = function() {
+        return item.length === 0;
+    }
+    this.enqueue = function(element, priority) {
+        let queueElement = new QueueElement(element, priority); 
+        if(this.isEmpty()) {
+            item.push(queueElement);
+        } else {
+            for (let i = 0 ; i < item.length ; i++){
+                if(i == item.length - 1) {
+                    item.push(queueElement);
+                    return;
+                } else if(item[i].priority < queueElement.priority) {
+                    break;
+                } else {
+                    item.splice(i, 0, queueElement);
+                    return
+                }
+                
+            }
+        }
+    }
+    this.print = function() {
+        return console.log(item);
+    }
+}
+
+
+var a = new PriorityQueue();
+a.print();
+a.enqueue("lalala",0);
+a.enqueue("bababa",100);
+a.enqueue("hahaha",30);
+a.enqueue("nanana",1);
+a.enqueue("eaeaea",1);
+a.print();
