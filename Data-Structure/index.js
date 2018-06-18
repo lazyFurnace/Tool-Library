@@ -54,43 +54,44 @@ function Queue() {
 //优先队列
 function PriorityQueue() {
     let item = [];
-    function QueueElement(element, priority) {
+    this.QueueElement = function(element, priority) {
         this.element = element;
         this.priority = priority;
     }
-    this.isEmpty = function() {
-        return item.length === 0;
-    }
     this.enqueue = function(element, priority) {
-        let queueElement = new QueueElement(element, priority); 
+        let queueElement = new this.QueueElement(element, priority); 
         if(this.isEmpty()) {
             item.push(queueElement);
         } else {
             for (let i = 0 ; i < item.length ; i++){
-                if(i == item.length - 1) {
+                if(item[i].priority > queueElement.priority) {
+                    item.splice(i, 0, queueElement);
+                    return;
+                }
+                if(i === item.length - 1) {
                     item.push(queueElement);
                     return;
-                } else if(item[i].priority < queueElement.priority) {
-                    break;
-                } else {
-                    item.splice(i, 0, queueElement);
-                    return
                 }
-                
             }
         }
     }
     this.print = function() {
         return console.log(item);
     }
+    this.isEmpty = function() {
+        return item.length === 0;
+    }
 }
 
-
-var a = new PriorityQueue();
-a.print();
-a.enqueue("lalala",0);
-a.enqueue("bababa",100);
-a.enqueue("hahaha",30);
-a.enqueue("nanana",1);
-a.enqueue("eaeaea",1);
-a.print();
+//测试用例
+var priorityQueueTest = new PriorityQueue();
+priorityQueueTest.enqueue("测试用例", 100);
+priorityQueueTest.enqueue("测试用例", 10);
+priorityQueueTest.enqueue("测试用例", -1);
+priorityQueueTest.enqueue("测试用例", 1);
+priorityQueueTest.enqueue("测试用例", 50);
+priorityQueueTest.enqueue("测试用例", 0);
+priorityQueueTest.enqueue("测试用例", 500);
+priorityQueueTest.enqueue("测试用例", 20);
+priorityQueueTest.print();
+console.log(priorityQueueTest.isEmpty());
