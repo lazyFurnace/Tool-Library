@@ -100,42 +100,6 @@ console.log(priorityQueueTest.isEmpty());
 function createObserver() {
     let eventQueue = {};
     function listen(name, fn) {
-        let fnLength;
-        if(eventQueue[name]) {
-            let isHave = eventQueue[name].some((item, index) => {
-                if(item === fn) {
-                    fnLength = index;
-                }
-                return item === fn;
-            });
-            if(!isHave) {
-                fnLength = eventQueue[name].length;
-                eventQueue[name].push(fn)
-            }
-        } else {
-            eventQueue[name] = [fn]
-            length = 0;
-        }
-        return function () {
-            eventQueue[name].splice(fnLength, 1);
-        }
-    }
-    function print() {
-        console.log(eventQueue);
-    }
-    return {
-        listen: listen,
-        print: print
-    }
-}
-
-
-
-
-// 观察者模式
-function createObserver() {
-    let eventQueue = {};
-    function listen(name, fn) {
         if(!fn) return;
         if(!eventQueue[name]) {
             eventQueue[name] = [fn];
