@@ -45,3 +45,7 @@
     带有事件处理程序的静态HTML元素需要一个角色 <br>
 20. `Visible, non-interactive elements with click handlers must have at least one keyboard listener  jsx-a11y/click-events-have-key-events` <br>
     具有单击处理程序的可见、非交互元素必须至少有一个键盘侦听器 <br>
+21. `error  Function 'listen' expected no return value      consistent-return` <br>
+    要求return语句总是或从不指定值（一致返回）  return 统一,不能有的返回值 有的返回空 <br>
+22. `Use object destructuring`
+    使用对象赋值解构
