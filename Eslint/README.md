@@ -19,7 +19,7 @@
     `Missing space after  =>   arrow-spacing` <br>
     箭头函数前后少空格 <br>
 9.  `Unexpected block statement surrounding arrow body; move the returned value immediately after the '=>'      arrow-body-style` <br>
-    不用写 {} return 等 箭头体周围的意外块语句；在 '=>' 箭头体样式之后立即移动返回值 <br>
+    不用写 {} return 等 箭头体周围的意外块语句；在 '=>' 箭头体样式之后直接返回值 <br>
 10. `Trailing spaces not allowed` <br>
     不允许尾随空间 <br>
 11. `Unexpected parentheses around single function argument having a body with no curly braces      arrow-parens` <br>
@@ -36,13 +36,13 @@
     `Unexpected space after unary operator '--'     space-unary-ops` <br>
     禁止使用一元操作符 ++ 和 -- (no-plusplus) <br>
 16. `Unexpected string concatenatio     prefer-template` <br>
-    意外的字符串连接 <br>
+    意外的字符串连接 尽量用 `` <br>
 17. `Unnecessary return statement` <br>
     不必要的return语句
 18. `Unexpected usage of singlequote    jsx-quotes` <br>
     单引号的意外使用 <br>
 19. `Static HTML elements with event handlers require a role    jsx-a11y/no-static-element-interactions` <br>
-    带有事件处理程序的静态HTML元素需要一个角色 <br>
+    带有事件处理程序的静态HTML元素需要一个角色 react中带事件的html必须有一个 [role属性](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md)  <br>
 20. `Visible, non-interactive elements with click handlers must have at least one keyboard listener  jsx-a11y/click-events-have-key-events` <br>
     具有单击处理程序的可见、非交互元素必须至少有一个键盘侦听器 <br>
 21. `error  Function 'listen' expected no return value      consistent-return` <br>
