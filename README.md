@@ -28,4 +28,4 @@
 />
 ```
 传递过多的函数 方便管理 代码 <br>
-reducer 可能会很大 想方法拆分开来写  可以类似于 redux 中的 combinedReducer 方法来实现功能  可以拆分到不同文件 也可以通过在当前组件 constructor 中 bind 组件来完成  
+reducer 可能会很大 想方法拆分开来写  可以类似于 redux 中的 combinedReducer 方法来实现功能  可以拆分到不同文件 也可以通过在当前组件 constructor 中 bind 各种方法来完成  
