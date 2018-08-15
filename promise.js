@@ -1,40 +1,32 @@
-function Promise(fn) {
+function Promise(executor) {
     const _ = this;
-
     _.state = 'pending';
     _.value = null;
-    _.callBack = [];
-
-    fn(resolve, reject);
-
+    _.resolveCallbacks = [];
+    _.rejectCallbacks = [];
+    
     function resolve(value) {
         _.state = 'fulfilled';
-        handle(value);
+        _.value = value;
     }
 
     function reject(value) {
         _.state = 'rejected';
-        handle(value);
-    }
-
-    function handle(value) {
         _.value = value;
-        _.callBack.forEach(item => {
-            _.value = item[_.state](_.value);
-        })
     }
+    
+    executor(resolve, reject);
 }
 
 Promise.prototype.then = function(onFulfilled, onRejected) {
-    if (this.state === 'pending') {
-        this.callBack.push({
-            fulfilled: onFulfilled,
-            rejected: onRejected
-        })
-    } else if (this.state === 'fulfilled') {
-        this.value = onFulfilled(this.value);
-    } else if (this.state === 'rejected') {
-        this.value = onRejected(this.value);
+    const _ = this;
+    if(_.state === 'pending') {
+        
+    } else if (_.state === 'fulfilled') {
+        onFulfilled(_.value);
+    } else if (_.state === 'rejected') {
+        onRejected(_.value);
+    } else {
+        throw Error '错误';
     }
-    return this;
 }
