@@ -16,9 +16,12 @@ function shellSort(arr) {
         }
         gap = (gap - 1) / 3;
     }
+    return arr;
 }
-function swap(array, i, j) {
-    let temp = array[j];
-    array[j] = array[i];
-    array[i] = temp;
+function swap(arr, i, j) {
+    let temp = arr[j];
+    arr[j] = arr[i];
+    arr[i] = temp;
 }
+
+module.exports = shellSort;

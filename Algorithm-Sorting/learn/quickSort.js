@@ -2,22 +2,22 @@ function quickSort(arr) {
     return quick(arr, 0, arr.length - 1);
 }
 function quick(arr, left, right) {
-    let index;
+    var index;
     if (arr.length > 1) {
         index = partition(arr, left, right);
         if (left < index - 1) {
             quick(arr, left, index - 1);
         }
-        if (index < right) {
+        if (right > index) {
             quick(arr, index, right);
         }
     }
     return arr;
 }
 function partition(arr, left, right) {
-    let pivot = arr[Math.floor((left + right) / 2)];
-    let i = left;
-    let j = right;
+    var pivot = arr[Math.floor((left + right) / 2)];
+    var i = left;
+    var j = right;
     while (i <= j) {
         while (arr[i] < pivot) {
             i++;
@@ -26,7 +26,7 @@ function partition(arr, left, right) {
             j--
         }
         if (i <= j) {
-            let temp = arr[i];
+            var temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
             i++;
