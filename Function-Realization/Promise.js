@@ -1,3 +1,4 @@
+// 未整理
 function Promise(executor) {
     const _ = this;
     _.state = 'pending';
