@@ -20,8 +20,7 @@ var a = {
 function getValue(name, age) {
     this.name = name;
     this.age = age;
-    console.log(this.value)
-    
+    console.log(this.value);
 }
 
 var b = getValue.myBind(a, 'liqi', 18);

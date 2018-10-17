@@ -5,7 +5,7 @@ function Promise(executor) {
     _.value = null;
     _.callbacksResolve = [];
     _.callbacksReject = [];
-    
+
     function resolve(value) {
         _.state = 'resolve';
         _.value = value;
@@ -23,10 +23,10 @@ function Promise(executor) {
     } catch (e) {
         reject(e);
     }
-    
+
 }
 
-Promise.prototype.then = function(onFulfilled, onRejected) {
+Promise.prototype.then = function (onFulfilled, onRejected) {
     const _ = this;
     let newPromise;
     if (_.state === 'pending') {
@@ -75,7 +75,7 @@ Promise.prototype.then = function(onFulfilled, onRejected) {
             })
         })
     } else {
-        throw Error ('Promise 状态未知');
+        throw Error('Promise 状态未知');
     }
 
     return newPromise;
@@ -121,7 +121,7 @@ function resolvePromise(newPromise, x, resolve, reject) {
             reject(e);
         }
     } else {
-      //这里返回的是非函数，非对象的值,就直接放在promise2的resolve中作为结果
-      resolve(x)
+        //这里返回的是非函数，非对象的值,就直接放在promise2的resolve中作为结果
+        resolve(x)
     }
 }

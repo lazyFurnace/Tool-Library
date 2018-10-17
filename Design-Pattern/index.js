@@ -2,27 +2,27 @@
 function createObserver() {
     let eventQueue = {};
     function listen(name, fn) {
-        if(!fn) return;
-        if(!eventQueue[name]) {
+        if (!fn) return;
+        if (!eventQueue[name]) {
             eventQueue[name] = [fn];
-        } else if(eventQueue[name] && !eventQueue[name].some(item => item === fn)) {
+        } else if (eventQueue[name] && !eventQueue[name].some(item => item === fn)) {
             eventQueue[name].push(fn);
         } else {
             console.log('This function has been subscribed!');
         }
         return function unlisten() {
-            if(!eventQueue[name]) return;
+            if (!eventQueue[name]) return;
 
             const index = eventQueue[name].indexOf(fn);
             eventQueue[name].splice(index, 1);
 
-            if(eventQueue[name].length === 0) {
+            if (eventQueue[name].length === 0) {
                 delete eventQueue[name];
             }
         }
     }
     function trigger(name, action) {
-        if(eventQueue[name]) {
+        if (eventQueue[name]) {
             eventQueue[name].forEach((item) => {
                 item(action);
             })
@@ -31,7 +31,7 @@ function createObserver() {
         }
     }
     function remove(name) {
-        if(eventQueue[name]) {
+        if (eventQueue[name]) {
             delete eventQueue[name];
         } else {
             console.log('No related subscriptions!');

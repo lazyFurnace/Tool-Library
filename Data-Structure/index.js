@@ -1,100 +1,87 @@
-//栈
+// 栈
 function Stack() {
     let item = [];
-    this.push = function(...arg) {
+    this.push = function (...arg) {
         item.push(...arg);
     }
-    this.pop = function() {
+    this.pop = function () {
         return item.pop();
     }
-    this.peek = function() {
+    this.peek = function () {
         return item[item.length - 1];
     }
-    this.isEmpty = function() {
+    this.isEmpty = function () {
         return item.length === 0;
     }
-    this.clear = function() {
+    this.clear = function () {
         item.length = 0;
     }
-    this.size = function() {
+    this.size = function () {
         return item.length;
     }
-    this.print = function() {
+    this.print = function () {
         return item.toString();
     }
 }
 
-//队列
+// 队列
 function Queue() {
     let item = [];
-    this.enqueue = function(...arg) {
+    this.enqueue = function (...arg) {
         item.push(...arg);
     }
-    this.dequeue = function() {
+    this.dequeue = function () {
         return item.shift()
     }
-    this.front = function() {
+    this.front = function () {
         return item[0];
     }
-    this.isEmpty = function() {
+    this.isEmpty = function () {
         return item.length === 0;
     }
-    this.clear = function() {
+    this.clear = function () {
         item.length = 0;
     }
-    this.size = function() {
+    this.size = function () {
         return item.length;
     }
-    this.print = function() {
+    this.print = function () {
         return item.toString();
     }
 }
 
 
-//优先队列
+// 优先队列
 function PriorityQueue() {
     let item = [];
-    this.QueueElement = function(element, priority) {
+    this.QueueElement = function (element, priority) {
         this.element = element;
         this.priority = priority;
     }
-    this.enqueue = function(element, priority) {
-        let queueElement = new this.QueueElement(element, priority); 
-        if(this.isEmpty()) {
+    this.enqueue = function (element, priority) {
+        let queueElement = new this.QueueElement(element, priority);
+        if (this.isEmpty()) {
             item.push(queueElement);
         } else {
-            for (let i = 0 ; i < item.length ; i++){
-                if(item[i].priority > queueElement.priority) {
+            for (let i = 0; i < item.length; i++) {
+                if (item[i].priority > queueElement.priority) {
                     item.splice(i, 0, queueElement);
                     return;
                 }
-                if(i === item.length - 1) {
+                if (i === item.length - 1) {
                     item.push(queueElement);
                     return;
                 }
             }
         }
     }
-    this.print = function() {
+    this.print = function () {
         return console.log(item);
     }
-    this.isEmpty = function() {
+    this.isEmpty = function () {
         return item.length === 0;
     }
 }
-
-//测试用例
-var priorityQueueTest = new PriorityQueue();
-priorityQueueTest.enqueue("测试用例", 100);
-priorityQueueTest.enqueue("测试用例", 10);
-priorityQueueTest.enqueue("测试用例", -1);
-priorityQueueTest.enqueue("测试用例", 1);
-priorityQueueTest.enqueue("测试用例", 50);
-priorityQueueTest.enqueue("测试用例", 0);
-priorityQueueTest.enqueue("测试用例", 500);
-priorityQueueTest.enqueue("测试用例", 20);
-priorityQueueTest.print();
-console.log(priorityQueueTest.isEmpty());
 
 // 链表
 function LinkedList() {
@@ -106,7 +93,7 @@ function LinkedList() {
         this.next = null;
     }
 
-    this.append = function(element) {
+    this.append = function (element) {
         element = new ListNode(element);
         let current;
 
@@ -122,7 +109,7 @@ function LinkedList() {
 
         length++;
     }
-    this.remove = function(position) {
+    this.remove = function (position) {
 
         if ((!position && position !== 0) || position < 0 || position > length - 1) {
             return false;
@@ -142,11 +129,11 @@ function LinkedList() {
             }
             previous.next = current.next;
         }
-        
+
         length--;
         return current;
     }
-    this.insert = function(position, element) {
+    this.insert = function (position, element) {
         element = new ListNode(element);
 
         if ((!position && position !== 0) || position < 0 || position > length - 1) {
@@ -174,7 +161,7 @@ function LinkedList() {
         return element;
     }
 
-    this.indexOf = function(element) {
+    this.indexOf = function (element) {
         let index = 0;
         let current = head;
 
@@ -189,7 +176,7 @@ function LinkedList() {
         return -1;
     }
 
-    this.print = function() {
+    this.print = function () {
         console.log(JSON.stringify(head, null, 4));
     }
 }

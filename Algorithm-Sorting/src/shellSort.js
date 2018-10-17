@@ -1,14 +1,17 @@
 function shellSort(arr) {
-    let len = arr.length;
-    let gap = 1;
-    while (gap < len / 3) {
-        gap = 3 * gap + 1;
+    var gap = 1;
+
+    while (gap < arr.length / 3) {
+        gap = gap * 3 + 1
     }
+
     while (gap >= 1) {
-        for (let i = gap; i < len; i++) {
-            for (let j = i; j >= gap; j -= gap) {
+        for (var i = gap; i < arr.length; i++) {
+            for (var j = i; j > 0; j -= gap) {
                 if (arr[j] < arr[j - gap]) {
-                    swap(arr, j, j - gap);
+                    var temp = arr[j];
+                    arr[j] = arr[j - gap];
+                    arr[j - gap] = temp;
                 } else {
                     break;
                 }
@@ -17,11 +20,6 @@ function shellSort(arr) {
         gap = (gap - 1) / 3;
     }
     return arr;
-}
-function swap(arr, i, j) {
-    let temp = arr[j];
-    arr[j] = arr[i];
-    arr[i] = temp;
 }
 
 module.exports = shellSort;

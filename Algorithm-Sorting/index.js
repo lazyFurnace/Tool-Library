@@ -1,3 +1,7 @@
+/**
+ * 排序算法练习
+ * src 里面是正确的 learn 里面在练习的时候写的
+ */
 // const path = 'src';
 const path = 'learn';
 
