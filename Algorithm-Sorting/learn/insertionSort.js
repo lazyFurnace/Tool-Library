@@ -1,10 +1,10 @@
 function insertionSort(arr) {
-    for (var i = 1; i < arr.length; i++) {
-        for (var j = i; j > 0; j--) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i; j > 0; j--) {
             if (arr[j] < arr[j - 1]) {
-                var temp = arr[j];
+                let temp = arr[j];
                 arr[j] = arr[j - 1];
-                arr[j -1] = temp;
+                arr[j - 1] = temp;
             } else {
                 break;
             }

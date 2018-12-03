@@ -48,4 +48,6 @@
 21. `error  Function 'listen' expected no return value      consistent-return` <br>
     要求return语句总是或从不指定值（一致返回）  return 统一,不能有的返回值 有的返回空 <br>
 22. `Use object destructuring` <br>
-    使用对象赋值解构
+    使用对象赋值解构 <br>
+23. `Absolute imports should come before relative imports import/first` <br>
+    组件引用顺序不正常，应该先引用相对路径组件，再引入本地自定义组件 <br>
